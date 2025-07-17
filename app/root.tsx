@@ -50,7 +50,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className="min-h-screen text-gray-900 dark:text-gray-100">
         <Header />
-        <div className="container mx-auto p-4">{children}</div>
+        <div className="container mx-auto p-4 pt-16">{children}</div>
         <ScrollRestoration />
         <Scripts />
       </body>

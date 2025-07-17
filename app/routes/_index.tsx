@@ -1,17 +1,24 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/_index";
 
+type Thread = {
+  id: string;
+  title: string;
+};
+
+type ThreadsResponse = Thread[];
+
 export async function loader() {
   const threads = await fetch(
     "https://railway.bulletinboard.techtrain.dev/threads?offset=0",
   );
-  return threads.json();
+  return (await threads.json()) as ThreadsResponse;
 }
 
-export default function _index({ loaderData }: Route.ComponentProps) {
+export default function Index({ loaderData }: Route.ComponentProps) {
   return (
     <div>
-      {loaderData.map(({ id, title }: { id: string; title: string }) => (
+      {loaderData.map(({ id, title }) => (
         <Link
           key={id}
           to={`/thread/${id}`}
