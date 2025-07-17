@@ -6,22 +6,20 @@ type Thread = {
   title: string;
 };
 
-type ThreadsResponse = Thread[];
-
 export async function loader() {
   const threads = await fetch(
     "https://railway.bulletinboard.techtrain.dev/threads?offset=0",
   );
-  return (await threads.json()) as ThreadsResponse;
+  return (await threads.json()) as Thread[];
 }
 
 export default function Index({ loaderData }: Route.ComponentProps) {
   return (
-    <div>
+    <div className="max-w-2xl mx-auto">
       {loaderData.map(({ id, title }) => (
         <Link
           key={id}
-          to={`/thread/${id}`}
+          to={`/threads/${id}`}
           className="block bg-white dark:bg-gray-800 rounded-xl shadow p-4 mb-4 border border-rose-100 dark:border-rose-900 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-rose-400"
           tabIndex={0}
           aria-label={title}

@@ -34,7 +34,7 @@ export async function action({ request }: Route.ActionArgs) {
     }
   }
   const newThread = await response.json();
-  return redirect(`/thread/${newThread.id}`);
+  return redirect(`/threads/${newThread.id}`);
 }
 
 export default function NewThread() {
