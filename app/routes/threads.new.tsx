@@ -1,4 +1,4 @@
-import { data, Form, redirect, useFetcher } from "react-router";
+import { data, redirect, useFetcher } from "react-router";
 import type { Route } from "./+types/threads.new";
 
 export async function action({ request }: Route.ActionArgs) {
