@@ -86,7 +86,7 @@ export default function ThreadDetail({ loaderData }: Route.ComponentProps) {
                 type="text"
                 name="post"
                 placeholder="投稿内容を入力"
-                className="flex-1 px-4 py-2 rounded-xl bg-white dark:bg-gray-800 shadow p-4 border border-rose-100 dark:border-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-400 text-gray-900 dark:text-gray-100"
+                className="flex-1 px-4 py-2 rounded-xl bg-white dark:bg-neutral-800 shadow p-4 border border-rose-100 dark:border-neutral-600 focus:outline-none focus:ring-2 focus:ring-rose-400 text-gray-900 dark:text-gray-100"
               />
               <button
                 type="submit"
@@ -100,7 +100,7 @@ export default function ThreadDetail({ loaderData }: Route.ComponentProps) {
             {loaderData.posts.map(({ id, post }) => (
               <div
                 key={id}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow p-4 border border-rose-100 dark:border-rose-900"
+                className="bg-white dark:bg-neutral-800 rounded-xl shadow p-4 border border-rose-100 dark:border-neutral-600"
               >
                 <p className="text-gray-900 dark:text-gray-100 text-base">
                   {post}

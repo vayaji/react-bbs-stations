@@ -20,11 +20,11 @@ export default function Index({ loaderData }: Route.ComponentProps) {
         <Link
           key={id}
           to={`/threads/${id}`}
-          className="block bg-white dark:bg-gray-800 rounded-xl shadow p-4 mb-4 border border-rose-100 dark:border-rose-900 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-rose-400"
+          className="block bg-white dark:bg-neutral-800 rounded-xl shadow p-4 mb-4 border border-rose-100 dark:border-neutral-600 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-rose-400"
           tabIndex={0}
           aria-label={title}
         >
-          <span className="text-rose-500 dark:text-rose-300 text-lg font-semibold hover:underline">
+          <span className="text-rose-500 dark:text-rose-400 text-lg font-semibold hover:underline">
             {title}
           </span>
         </Link>

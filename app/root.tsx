@@ -12,8 +12,8 @@ import "./app.css";
 
 function Header() {
   return (
-    <header className="bg-rose-400 h-16 flex items-center justify-between px-4 gap-4">
-      <h1 className="text-white text-2xl font-bold">
+    <header className="bg-rose-400 dark:bg-neutral-800 h-16 flex items-center justify-between px-4 gap-4">
+      <h1 className="text-white text-2xl font-bold dark:text-rose-400">
         <Link to="/">React BBS Stations</Link>
       </h1>
       <Link
@@ -41,7 +41,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="bg-gray-50 dark:bg-gray-950">
+    <html lang="en" className="bg-rose-50 dark:bg-neutral-900">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
