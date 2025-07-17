@@ -1,14 +1,30 @@
 import {
   isRouteErrorResponse,
+  Link,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
 import type { Route } from "./+types/root";
 import "./app.css";
+
+function Header() {
+  return (
+    <header className="bg-rose-400 h-16 flex items-center justify-between px-4 gap-4">
+      <h1 className="text-white text-2xl font-bold">
+        <Link to="/">React BBS Stations</Link>
+      </h1>
+      <Link
+        to="/threads/new"
+        className="text-white text-lg font-semibold p-2 rounded-xl outline-dotted hover:outline-solid outline-2 outline-white"
+      >
+        新規スレッドを作成
+      </Link>
+    </header>
+  );
+}
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -25,14 +41,15 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-gray-50 dark:bg-gray-950">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="min-h-screen text-gray-900 dark:text-gray-100">
+        <Header />
         {children}
         <ScrollRestoration />
         <Scripts />
