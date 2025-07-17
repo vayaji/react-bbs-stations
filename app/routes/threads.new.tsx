@@ -53,7 +53,7 @@ export default function NewThread() {
           type="text"
           name="title"
           placeholder="タイトルを入力"
-          // required
+          required
           className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-rose-400 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
         />
         {errors?.title && (
@@ -61,7 +61,7 @@ export default function NewThread() {
         )}
         <button
           type="submit"
-          className="bg-rose-400 text-white text-lg font-semibold py-2 rounded-xl shadow hover:shadow-lg transition-all"
+          className="bg-rose-400 text-white text-lg font-semibold py-2 rounded-xl shadow hover:shadow-lg transition-all cursor-pointer"
         >
           作成する
         </button>
