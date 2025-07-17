@@ -18,7 +18,7 @@ function Header() {
       </h1>
       <Link
         to="/threads/new"
-        className="text-white text-lg font-semibold p-2 rounded-xl outline-dotted hover:outline-solid outline-2 outline-white"
+        className="text-white text-lg font-semibold p-2 rounded-xl outline-dotted hover:outline-solid shadow hover:shadow-lg outline-2 outline-white transition-all"
       >
         新規スレッドを作成
       </Link>
