@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { data, useFetcher } from "react-router";
 import type { Route } from "./+types/threads.$id";
 
@@ -67,7 +68,15 @@ export async function action({ request, params }: Route.ActionArgs) {
 }
 export default function ThreadDetail({ loaderData }: Route.ComponentProps) {
   const fetcher = useFetcher();
+  const formRef = useRef<HTMLFormElement>(null);
+  const data = loaderData as Thread;
+  const posts = data.posts || [];
   const errors = fetcher.data?.errors;
+  useEffect(() => {
+    if (formRef.current && posts.length > 0) {
+      formRef.current.reset();
+    }
+  }, [posts]);
   return (
     <div className="max-w-2xl mx-auto">
       {"error" in loaderData ? (
@@ -77,7 +86,7 @@ export default function ThreadDetail({ loaderData }: Route.ComponentProps) {
           <h2 className="text-2xl font-bold text-rose-500 dark:text-rose-300 mb-6">
             投稿一覧
           </h2>
-          <fetcher.Form method="post" className="mb-3">
+          <fetcher.Form method="post" className="mb-3" ref={formRef}>
             {errors?.post && (
               <p className="text-red-500 text-sm">{errors.post}</p>
             )}
